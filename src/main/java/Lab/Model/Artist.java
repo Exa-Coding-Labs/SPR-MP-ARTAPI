@@ -51,6 +51,7 @@ public class Artist {
      * Painting's JSON.
      */
     @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "artist_fk")
     @JsonManagedReference
     private List<Painting> paintings;
 }

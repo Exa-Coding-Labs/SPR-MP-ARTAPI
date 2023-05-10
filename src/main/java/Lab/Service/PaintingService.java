@@ -48,6 +48,7 @@ public class PaintingService {
         a.getPaintings().add(painting);
         return paintingRepository.save(painting);
     }
+
     /**
      * TODO Problem 1: Leverage the Spring Data JPARepository method findAll() to retrieve all Paintings from the Painting table.
      * @return a list of all Painting entities
@@ -56,7 +57,15 @@ public class PaintingService {
         return null;
     }
     /**
-     * TODO Problem 2: Write a query method in Spring Data JPARepository to retrieve all Paintings by their genre.
+     * TODO Problem 2: Leverage the JPARepository to retrieve the Artist of a Painting with a particular ID.
+     * @param paintingID
+     * @return the artist of a particular painting.
+     */
+    public Artist getArtistOfPainting(long paintingID){
+        return null;
+    }
+    /**
+     * TODO Problem 3: Write a query method in Spring Data JPARepository to retrieve all Paintings by their genre.
      * @param genre
      * @return a list of all Painting entities with a particular genre.
      */
@@ -64,7 +73,7 @@ public class PaintingService {
         return null;
     }
     /**
-     * TODO Problem 3: Write a query method in Spring Data JPARepository to retrieve all Paintings by their title.
+     * TODO Problem 4: Write a query method in Spring Data JPARepository to retrieve all Paintings by their title.
      * @param title
      * @return a list of all Painting entities with a particular title.
      */
@@ -72,7 +81,7 @@ public class PaintingService {
         return null;
     }
     /**
-     * TODO Problem 4: Write a query method in Spring Data JPARepository to retrieve all Paintings by their title & genre.
+     * TODO Problem 5: Write a query method in Spring Data JPARepository to retrieve all Paintings by their title & genre.
      * @param title
      * @param genre
      * @return a list of all Painting entities with a particular title & genre.
@@ -80,4 +89,5 @@ public class PaintingService {
     public List<Painting> getAllPaintingsByTitleAndGenre(String title, String genre){
         return null;
     }
+
 }

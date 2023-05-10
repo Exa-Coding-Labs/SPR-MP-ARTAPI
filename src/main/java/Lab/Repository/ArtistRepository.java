@@ -14,7 +14,9 @@ import java.util.List;
  *
  * Spring provides any JPARepository with some automatically generated abilities, such as persisting with save(),
  * as well as some automatically generated methods for interacting with databases such as findAll() and findById().
- * These methods do not need to be implemented by the developer at all.
+ * These methods do not need to be implemented by the developer at all. If the developer needs a more complicated
+ * query, they can use a named query and allow Spring to construct a query based off of a method name (for instance,
+ * selecting an entity where a column fulfills some condition, just like in a WHERE clause in SQL.)
  *
  * A JPARepository also allows for the developer to write JPQL (Java Persistence Query Language), which allows for the
  * writing of queries that Spring JPARepository does not provide from the start. JPQL Queries are made for interacting
@@ -33,21 +35,23 @@ import java.util.List;
 public interface ArtistRepository extends JpaRepository<Artist, Long> {
 
     /**
-     * Retrieve Artist entity(s) with nationality field matching the :nationality parameter using a JPQL query
-     * @param nationality
-     * @return A List of all Artist entities with nationality
-     */
-    @Query("FROM Artist WHERE nationality = :nationality")
-    List<Artist> findArtistsByNationality(@Param("nationality") String nationality);
-    /**
      * Spring is smart: JPARepositories can infer many types of queries based on the method name without
-     * any need for an explicit JPQL query.
+     * any need the write a query.
      * You can read about more of them here:
      * https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords
      * Until you need to write a very ornate query, these can fulfill all of your use cases.
      * @param name
      * @return A List of all Artist entities with a certain name
      */
-    List<Artist> findArtistByName(String name);
+    List<Artist> findArtistsByName(String name);
+    /**
+     * Alternatively, we could explicitly write a query ourselves using JPQL (Java Persistence Query Language). See the
+     * example below. Retrieve Artist entity(s) with nationality field matching the :nationality parameter using a
+     * JPQL query
+     * @param nationality
+     * @return A List of all Artist entities with nationality
+     */
+    @Query("FROM Artist WHERE nationality = :nationality")
+    List<Artist> findArtistsByNationality(@Param("nationality") String nationality);
 
 }

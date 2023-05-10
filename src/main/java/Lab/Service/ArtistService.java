@@ -60,6 +60,15 @@ public class ArtistService {
         return artistRepository.save(artist);
     }
     /**
+     * Method retrieves Artists with a particular name by leveraging a JPQL query written in ArtistRepository.
+     * @param name a Name for a particular painter (eg 'Picasso')
+     * @return all Artist entities with the nationality
+     */
+    public List<Artist> getArtistsByName(String name){
+        Application.log.info("logging method execution: ArtistService.getArtistsByName");
+        return artistRepository.findArtistsByName(name);
+    }
+    /**
      * Method retrieves Artists of a particular Nationality by leveraging a query method written in ArtistRepository.
      * @param nationality a String for a nationality (eg 'Spanish')
      * @return all Artist entities with the nationality
@@ -67,14 +76,5 @@ public class ArtistService {
     public List<Artist> getArtistsByNationality(String nationality){
         Application.log.info("logging method execution: ArtistService.getArtistsByNationality");
         return artistRepository.findArtistsByNationality(nationality);
-    }
-    /**
-     * Method retrieves Artists with a particular name by leveraging a JPQL query written in ArtistRepository.
-     * @param name a Name for a particular painter (eg 'Picasso')
-     * @return all Artist entities with the nationality
-     */
-    public List<Artist> getArtistsByName(String name){
-        Application.log.info("logging method execution: ArtistService.getArtistsByName");
-        return artistRepository.findArtistsByNationality(name);
     }
 }

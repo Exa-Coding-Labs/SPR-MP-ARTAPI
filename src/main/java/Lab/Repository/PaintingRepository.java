@@ -23,12 +23,12 @@ public interface PaintingRepository extends JpaRepository<Painting, Long> {
 
     /**
      * TODO Problem 1: Retrieve Painting entities with a particular genre.
-     * (You will need to leverage either @Query annotation or a JPA query method)
+     * (You will need to leverage either @Query annotation or a JPA named query method)
      */
 
     /**
      * TODO Problem 2: Retrieve Painting entities with a particular title.
-     * (You will need to leverage either @Query annotation or a JPA query method)
+     * (You will need to leverage either @Query annotation or a JPA named query method)
      */
 
     /**

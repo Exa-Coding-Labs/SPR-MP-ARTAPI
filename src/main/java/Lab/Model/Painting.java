@@ -54,10 +54,7 @@ public class Painting {
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference
-    @JoinColumn(name = "artist_id")
+    @JoinColumn(name = "artist_fk")
     private Artist artist;
-    /**
-     * Notice that getters, setters, constructors, equals, toString, hashcode are not necessary to implement here
-     * as they are all being automatically generated at runtime by Lombok.
-     */
+
 }
