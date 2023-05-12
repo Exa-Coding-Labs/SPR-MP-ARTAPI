@@ -10,10 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class Application {
-	/**
-	 * set up a logger - to be used in the Aspect classes to apply logging to all Service class methods via AOP
-	 */
-	public static Logger log = LogManager.getLogger(Application.class);
 
 	/**
 	 * Automatically configure & run the Spring ArtApplication Context, start Controllers.
