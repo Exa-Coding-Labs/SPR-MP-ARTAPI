@@ -40,7 +40,7 @@ public class PaintingController {
         this.paintingService = paintingService;
     }
     /**
-     * This endpoint is provided because the logic is tricky, and you need to be able to test your API. Endpoint on POST
+     * This endpoint is provided to ensure you are able to test your API. Endpoint on POST
      * localhost:9000/artist/{artistID}/painting to persist a painting contained in the request
      * body. For instance, a request to POST localhost:9000/artist/3/painting, containing a valid new Painting JSON in
      * the request body such as
@@ -55,6 +55,7 @@ public class PaintingController {
 
     /**
      * TODO Problem 1: write an endpoint on GET localhost:9000/painting to get all paintings.
+     * Leverage the paintingService.
      * For instance, a request to GET localhost:9000/painting should retrieve all paintings, such as
      * [{"title":"guernica", "year":1937, "genre":"cubism"},
      *  {"title":"capricious", "year":1930, "genre":"abstract"},
@@ -64,22 +65,24 @@ public class PaintingController {
 
     /**
      * TODO Problem 3: write an endpoint on GET localhost:9000/painting?title={title} to retrieve all paintings with
-     * some title. For instance, a request to GET localhost:9000/painting?title=blue could respond with
+     * some title. Leverage the paintingService. For instance, a request to GET localhost:9000/painting?title=blue
+     * could respond with
      * [{"title":"blue", "year":1927, "genre":"abstract"},
      *  {"title":"blue", "year":2023, "genre":"paw prints"}]
      */
 
     /**
      * TODO Problem 4: write an endpoint on GET localhost:9000/painting?genre={genre} to retrieve all paintings with
-     * some genre. For instance, a request to GET localhost:9000/painting?genre=surrealist could respond with
+     * some genre. Leverage the paintingService. For instance, a request to GET
+     * localhost:9000/painting?genre=surrealist could respond with
      * [{"title":"capricious", "year":1930, "genre":"abstract"},
      *  {"title":"blue", "year":1927, "genre":"abstract"}]
      */
 
     /**
      * TODO Problem 5: write an endpoint on GET localhost:9000/painting?genre={genre}&title={title} to retrieve all
-     * paintings with some genre AND title. For instance, a request to GET localhost:9000/painting?title=blue&genre=surrealist
-     * could respond with,
+     * paintings with some genre AND title. Leverage the paintingService. For instance, a request to GET
+     * localhost:9000/painting?title=blue&genre=surrealist could respond with,
      * [{"title":"blue", "year":1927, "genre":"abstract"}]
      */
 }
